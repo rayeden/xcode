@@ -1,0 +1,28 @@
+# Created by .ignore support plugin (hsz.mobi)
+### xhtc template
+
+ *.class
+
+  *.classpath
+
+  *.project
+
+  *.iml
+
+  *.idea
+
+  .idea/
+
+  bin/
+
+  target/
+
+  .settings/
+
+  test-output/
+
+  src/generated/*
+
+  logs/
+
+  .DS_Store
