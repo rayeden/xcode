@@ -19,6 +19,9 @@ public enum PayrollDay {
         return payType.pay(hoursWorked, payRate);
     }
 
+    /**
+     * 策略枚举
+     */
     private enum PayType{
         /**
          * 正常工作日中，超出8小时产生加班工资
@@ -45,6 +48,11 @@ public enum PayrollDay {
             double basePay = hoursWorked * payRate;
             return basePay + overtimePay(hoursWorked, payRate);
         }
+    }
 
+    public static void main(String[] args) {
+        for(PayrollDay day : PayrollDay.values()){
+            System.out.println(day.pay(10, 0.5));
+        }
     }
 }
