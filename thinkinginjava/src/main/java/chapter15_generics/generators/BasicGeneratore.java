@@ -14,7 +14,7 @@ public class BasicGeneratore<T> implements Generator<T> {
 
     private Class<T> type;
 
-    @Override
+//    @Override
     public T next() {
         try{
             return type.newInstance();

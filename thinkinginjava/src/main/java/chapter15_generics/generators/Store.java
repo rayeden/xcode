@@ -67,7 +67,7 @@ class Product {
     }
 
     public static Generator<Product> generator = new Generator<Product>() {
-        @Override
+//        @Override
         public Product next() {
             return new Product(new Random().nextInt(1000), "Test", Math.round(new Random().nextDouble() * 1000.0) + 0.99);
         }
