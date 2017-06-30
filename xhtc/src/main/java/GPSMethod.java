@@ -156,7 +156,7 @@ public class GPSMethod {
      */
     public static void main(String[] args) {
         GPSMethod method = new GPSMethod();
-        //华星现代产业园F座 (经度,纬度) 分别为百度和高德坐标的经纬度
+        //华星现代产业园F座, 分别为百度和高德坐标的经纬度
         BigDecimal bdLng = BigDecimal.valueOf(120.127832);
         BigDecimal bdLat = BigDecimal.valueOf(30.281228);
         BigDecimal gdLng = BigDecimal.valueOf(120.121663);
