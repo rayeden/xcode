@@ -18,6 +18,7 @@ import static java.lang.Math.sin;
  */
 public class GPSMethod {
 
+    //地球半径
     private static double EARTH_RADIUS = 6378.137;
 
     private static double rad(double d) {
@@ -161,6 +162,7 @@ public class GPSMethod {
     public static void main(String[] args) {
         GPSMethod method = new GPSMethod();
 
+        //华星现代产业园F座，百度地图和高德地图的经纬度坐标
         BigDecimal bdLng = BigDecimal.valueOf(120.127832);
         BigDecimal bdLat = BigDecimal.valueOf(30.281228);
         BigDecimal gdLng = BigDecimal.valueOf(120.121663);
