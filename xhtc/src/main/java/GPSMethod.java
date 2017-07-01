@@ -14,6 +14,7 @@ import static java.lang.Math.*;
  */
 public class GPSMethod {
 
+    //地球半径
     private static double EARTH_RADIUS = 6378.137;
 
     private static double rad(double d) {
