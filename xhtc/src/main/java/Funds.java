@@ -9,13 +9,17 @@ import java.util.Date;
  */
 public class Funds {
 
-    private static final BigDecimal salary = BigDecimal.valueOf(20000);
+    private static final BigDecimal salary = BigDecimal.valueOf(12000);
 
-    public static final BigDecimal rate = BigDecimal.valueOf(0.12);
+    public static final BigDecimal rate = BigDecimal.valueOf(0.10);
+
+    public static final BigDecimal bankRate = BigDecimal.valueOf(0.0325);
+
+    public static final Integer year = 30;
 
     private static final BigDecimal basicFund = salary.multiply(rate).multiply(BigDecimal.valueOf(2));
 
-    private static final int MONTH = 12;
+    private static final int MONTH = 18;
 
     private static final BigDecimal PUBLICFUND = BigDecimal.valueOf(0.00325);
 
@@ -35,8 +39,6 @@ public class Funds {
         BigDecimal couldGet = average.multiply(BigDecimal.valueOf(15));
         System.out.println("average: " + average);
         System.out.println("couldGet: " + couldGet);
-        System.out.println("publicFund per month: " + couldGet.multiply(PUBLICFUND));
-        System.out.println("comfund per mount: " + couldGet.multiply(COMFUND));
 
     }
 

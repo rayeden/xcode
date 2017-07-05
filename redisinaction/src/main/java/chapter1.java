@@ -6,8 +6,14 @@ import java.util.*;
 /**
  * Created by xhtc on 2017/7/5.
  */
+
+/**
+ * 文章投票网站
+ *
+ */
 public class chapter1 {
 
+    //每天有86400秒，一周的时间为7*86400秒
     private static final int ONE_WEEK_IN_SECONDS = 7 * 86400;
     private static final int VOTE_SCORE = 432;
     private static final int ARTICLES_PER_PAGE = 25;
