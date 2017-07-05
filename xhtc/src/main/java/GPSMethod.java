@@ -11,6 +11,7 @@ import static java.lang.Math.*;
 
 /**
  * 经纬度坐标计算方法
+ *
  */
 public class GPSMethod {
 
