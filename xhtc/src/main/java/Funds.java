@@ -19,7 +19,7 @@ public class Funds {
 
     private static final BigDecimal basicFund = salary.multiply(rate).multiply(BigDecimal.valueOf(2));
 
-    private static final int MONTH = 18;
+    private static final int MONTH = 12;
 
     private static final BigDecimal PUBLICFUND = BigDecimal.valueOf(0.00325);
 
