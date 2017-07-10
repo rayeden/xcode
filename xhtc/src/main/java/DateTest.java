@@ -1,3 +1,4 @@
+import java.sql.Time;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -52,6 +53,51 @@ public class DateTest {
 
         System.out.println(calendar2.before(calendar3));
 
+        System.out.println("---------------SQL TIME TEST---------------");
+
+        sqlTimeTest();
+
+        addDay();
+
     }
+
+    public static void sqlTimeTest(){
+
+        SimpleDateFormat sqlTimeformat  = new SimpleDateFormat("HH:mm:ss");
+        Time time = new Time(13,0,0);
+        Date now = new Date();
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(now);
+        String nowStr = sqlTimeformat.format(now);
+        Time timeNow  = new Time(calendar.get(Calendar.HOUR), calendar.get(Calendar.MINUTE), calendar.get(Calendar.SECOND));
+        System.out.println(nowStr);
+        System.out.println("time is: " + time + ", now is: " + timeNow);
+        System.out.println(time.before(timeNow));
+
+    }
+
+
+    /**
+     * Calendar增加日期后，月份同时改变
+     * @throws ParseException
+     */
+    public static void addDay() throws ParseException {
+
+        SimpleDateFormat dateformat  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String txt = "2017-01-31 00:00:00";
+        Date date = dateformat.parse(txt);
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+
+        System.out.println(calendar.get(Calendar.MONTH) + 1);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+
+        System.out.println(calendar.get(Calendar.MONTH) + 1);
+        System.out.println(calendar.get(Calendar.DAY_OF_MONTH));
+
+    }
+
 
 }
