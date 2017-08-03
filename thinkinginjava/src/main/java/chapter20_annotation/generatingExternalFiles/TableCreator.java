@@ -76,7 +76,7 @@ public class TableCreator {
             constraints += " NOT NULL";
         }
         if(con.primaryKey()) {
-            constraints += "PRIMARY KEY";
+            constraints += " PRIMARY KEY";
         }
         if(con.unique()){
             constraints += " UNIQUE";
