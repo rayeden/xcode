@@ -33,6 +33,8 @@ public class TableCreator {
             if(tableName.length() < 1){
                 tableName = cl.getName().toUpperCase();
             }
+            //类型注解名称
+            System.out.println("tableName: " + tableName);
             List<String> columnDefs = new ArrayList<>();
             //获取类中的成员
             for(Field field : cl.getDeclaredFields()){

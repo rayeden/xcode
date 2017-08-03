@@ -8,7 +8,7 @@ package chapter20_annotation.generatingExternalFiles;
  * 用注解设置成员变量
  */
 
-@DBTable(name = "Member")
+@DBTable(name = "MemberName")
 public class Member {
 
     //默认赋值到int
