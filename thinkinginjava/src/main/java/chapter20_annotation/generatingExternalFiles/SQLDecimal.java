@@ -6,17 +6,22 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by xhtc on 2017/8/2.
+ * Created by BG289522 on 2017/8/4.
  */
 
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface SQLString {
+public @interface SQLDecimal {
 
-    //字段长度
-    int length() default 0;
-
+    //字段名称
     String name() default "";
 
-    Constraints constrants() default @Constraints;
+    //长度为10
+    int length() default 10;
+
+    //精度为2
+    int precision() default 2;
+
+    Constraints constraints() default @Constraints;
+
 }

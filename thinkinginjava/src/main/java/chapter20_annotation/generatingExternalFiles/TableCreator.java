@@ -7,6 +7,8 @@ import java.util.List;
 
 /**
  * Created by xhtc on 2017/8/3.
+ *
+ * Excersice
  */
 
 /**
@@ -15,72 +17,92 @@ import java.util.List;
 public class TableCreator {
 
     public static void main(String[] args) throws ClassNotFoundException {
-        if(args.length < 1){
+        if (args.length < 1) {
             System.out.println("arguments: annotated classes");
             System.exit(0);
         }
-        for(String className : args){
+        for (String className : args) {
             //反射得到类型信息
             Class<?> cl = Class.forName(className);
             //获取类上指定的注解
             DBTable dbTable = cl.getAnnotation(DBTable.class);
             //如果参数列表的类中不存在DBTable注解，跳过
-            if(dbTable == null){
+            if (dbTable == null) {
                 System.out.println("No Table annotation in class " + className);
                 continue;
             }
             String tableName = dbTable.name();
-            if(tableName.length() < 1){
+            if (tableName.length() < 1) {
                 tableName = cl.getName().toUpperCase();
             }
             //类型注解名称
             System.out.println("tableName: " + tableName);
             List<String> columnDefs = new ArrayList<>();
             //获取类中的成员
-            for(Field field : cl.getDeclaredFields()){
+            for (Field field : cl.getDeclaredFields()) {
+                //字段名称
                 String columnName = null;
                 //获取成员上的注解列表
                 Annotation[] anns = field.getDeclaredAnnotations();
-                if(anns.length < 1)
+                if (anns.length < 1)
                     continue;
-                if(anns[0] instanceof SQLInteger) {
+                //数据库表中每个字段只会有一种数据类型，数据类型注解中嵌套了约束注解，所以只需用anns[0]
+                if (anns[0] instanceof SQLInteger) {
                     SQLInteger sInt = (SQLInteger) anns[0];
-                    if(sInt.name().length() < 1)
+                    if (sInt.name().length() < 1) {
                         columnName = field.getName().toUpperCase();
-                    else
+                    } else {
                         columnName = sInt.name();
+                    }
                     columnDefs.add(columnName + " INT" + getConstraints(sInt.constraints()));
                 }
-                if(anns[0] instanceof SQLString){
+                if (anns[0] instanceof SQLString) {
                     SQLString sString = (SQLString) anns[0];
-                    if(sString.name().length() < 1){
+                    if (sString.name().length() < 1) {
                         columnName = field.getName().toUpperCase();
-                    }
-                    else {
+                    } else {
                         columnName = sString.name();
                     }
-                    columnDefs.add(columnName + " VARCHAR(" + sString.value() +")" + getConstraints(sString.constrants()));
+                    columnDefs.add(columnName + " VARCHAR(" + sString.length() + ")" + getConstraints(sString.constrants()));
                 }
-                StringBuilder createCommand = new StringBuilder("CREATE TABLE " + tableName + "(");
-                for(String columnDef : columnDefs)
-                    createCommand.append("\n    " + columnDef + ".");
-                String tableCreate = createCommand.substring(0,createCommand.length() - 1) + ");";
-                System.out.println("Table Creation SQL for " + className + " is :\n" + tableCreate);
+                if (anns[0] instanceof SQLDateTime) {
+                    SQLDateTime sDateTime = (SQLDateTime) anns[0];
+                    if (sDateTime.name().length() < 1) {
+                        columnName = field.getName().toUpperCase();
+                    } else {
+                        columnName = sDateTime.name();
+                    }
+                    columnDefs.add(columnName + " DateTime()" + getConstraints(sDateTime.constraints()));
+                }
+                if (anns[0] instanceof SQLDecimal) {
+                    SQLDecimal sDecimal = (SQLDecimal) anns[0];
+                    if (sDecimal.name().length() < 1) {
+                        columnName = field.getName().toUpperCase();
+                    } else {
+                        columnName = sDecimal.name();
+                    }
+                    columnDefs.add(columnName + " Decimal(" + sDecimal.length() + ", " + sDecimal.precision() + ")" + getConstraints(sDecimal.constraints()));
+                }
             }
+            StringBuilder createCommand = new StringBuilder("CREATE TABLE " + tableName + "(");
+            for (String columnDef : columnDefs)
+                createCommand.append("\n    ").append(columnDef).append(".");
+            String tableCreate = createCommand.substring(0, createCommand.length() - 1) + ");";
+            System.out.println("Table Creation SQL for " + className + " is :\n" + tableCreate);
 
         }
     }
 
     //Constraints 约束
-    private static String getConstraints(Constraints con){
+    private static String getConstraints(Constraints con) {
         String constraints = "";
-        if(!con.allowNull()){
+        if (!con.allowNull()) {
             constraints += " NOT NULL";
         }
-        if(con.primaryKey()) {
+        if (con.primaryKey()) {
             constraints += " PRIMARY KEY";
         }
-        if(con.unique()){
+        if (con.unique()) {
             constraints += " UNIQUE";
         }
         return constraints;

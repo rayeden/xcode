@@ -4,6 +4,8 @@ package chapter20_annotation.generatingExternalFiles;
  * Created by xhtc on 2017/8/2.
  */
 
+import java.math.BigDecimal;
+
 /**
  * 用注解设置成员变量
  */
@@ -12,19 +14,30 @@ package chapter20_annotation.generatingExternalFiles;
 public class Member {
 
     //默认赋值到int
-    @SQLString(30)
-    String firstName;
+    @SQLString(length = 30)
+    private String firstName;
 
-    @SQLString(50)
-    String lastName;
+    @SQLString(length = 50)
+    private String lastName;
 
     @SQLInteger
-    Integer age;
+    private Integer age;
 
-    @SQLString(value = 30, constrants = @Constraints(primaryKey = true))
-    String handle;
+    @SQLString(length = 30, constrants = @Constraints(primaryKey = true))
+    private String handle;
 
-    static int memberCount;
+    //创建时间
+    @SQLDateTime(constraints = @Constraints(allowNull = false))
+    private String createTime;
+
+    @SQLDecimal
+    private BigDecimal salary;
+
+    private static int memberCount;
+
+    public String getCreateTime() {
+        return createTime;
+    }
 
     public String getFirstName() {
         return firstName;
@@ -42,7 +55,15 @@ public class Member {
         return handle;
     }
 
-    public String toString(){
+    public BigDecimal getSalary() {
+        return salary;
+    }
+
+    public static int getMemberCount() {
+        return memberCount;
+    }
+
+    public String toString() {
         return handle;
     }
 
