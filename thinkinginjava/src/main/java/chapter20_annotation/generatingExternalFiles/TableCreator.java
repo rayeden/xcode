@@ -1,9 +1,13 @@
 package chapter20_annotation.generatingExternalFiles;
 
+import chapter20_annotation.aptAnnotationProcessor.database.*;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.List;
+
+import static chapter20_annotation.aptAnnotationProcessor.TableCreatorUtil.getConstraints;
 
 /**
  * Created by xhtc on 2017/8/3.
@@ -91,21 +95,6 @@ public class TableCreator {
             System.out.println("Table Creation SQL for " + className + " is :\n" + tableCreate);
 
         }
-    }
-
-    //Constraints 约束
-    private static String getConstraints(Constraints con) {
-        String constraints = "";
-        if (!con.allowNull()) {
-            constraints += " NOT NULL";
-        }
-        if (con.primaryKey()) {
-            constraints += " PRIMARY KEY";
-        }
-        if (con.unique()) {
-            constraints += " UNIQUE";
-        }
-        return constraints;
     }
 
 }
