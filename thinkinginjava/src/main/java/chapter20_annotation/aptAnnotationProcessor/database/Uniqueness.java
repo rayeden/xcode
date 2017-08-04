@@ -1,4 +1,4 @@
-package chapter20_annotation.generatingExternalFiles;
+package chapter20_annotation.aptAnnotationProcessor.database;
 
 /**
  * Created by xhtc on 2017/8/2.

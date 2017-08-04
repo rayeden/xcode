@@ -1,4 +1,4 @@
-package chapter20_annotation.generatingExternalFiles;
+package chapter20_annotation.aptAnnotationProcessor.database;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
