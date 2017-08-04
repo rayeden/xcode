@@ -4,6 +4,8 @@ package chapter20_annotation.generatingExternalFiles;
  * Created by xhtc on 2017/8/2.
  */
 
+import chapter20_annotation.aptAnnotationProcessor.database.*;
+
 import java.math.BigDecimal;
 
 /**
