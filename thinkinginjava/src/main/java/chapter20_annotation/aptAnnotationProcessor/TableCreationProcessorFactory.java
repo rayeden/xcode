@@ -20,6 +20,9 @@ import java.util.Set;
  * Created by BG289522 on 2017/8/4.
  */
 
+/**
+ * 跑不起来？
+ */
 public class TableCreationProcessorFactory implements AnnotationProcessorFactory {
 
     private String sql = "";
@@ -29,6 +32,7 @@ public class TableCreationProcessorFactory implements AnnotationProcessorFactory
         return Collections.emptySet();
     }
 
+    //批量获取注解
     @Override
     public Collection<String> supportedAnnotationTypes() {
         return Arrays.asList(
