@@ -3,7 +3,7 @@ package chapter21_concurrency.exercise;
 /**
  * Created by xhtc on 2017/8/5.
  */
-public class E_01Threads {
+public class E01_Threads {
 
     public static void main(String[] args) {
 
