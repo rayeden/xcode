@@ -1,4 +1,4 @@
-package chapter20_annotation.Exercise;
+package chapter20_annotation.exercise;
 
 import chapter20_annotation.aptAnnotationProcessor.InterfaceExtractorProcessor;
 import com.sun.mirror.apt.AnnotationProcessor;

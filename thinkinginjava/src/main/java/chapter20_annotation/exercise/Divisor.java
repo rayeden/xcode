@@ -1,7 +1,6 @@
-package chapter20_annotation.Exercise;
+package chapter20_annotation.exercise;
 
 import chapter20_annotation.aptAnnotationProcessor.ExtractInterface;
-import chapter20_annotation.aptAnnotationProcessor.Multiplier;
 
 /**
  * Created by BG289522 on 2017/8/4.

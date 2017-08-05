@@ -1,9 +1,10 @@
-package chapter20_annotation;
+package chapter20_annotation.junit;
 
 /**
  * Created by xhtc on 2017/8/4.
  */
 
+import chapter20_annotation.Test;
 import net.mindview.util.*;
 
 public class AtUnitExample1 {
@@ -27,7 +28,14 @@ public class AtUnitExample1 {
         return methodTwo() == 2;
     }
 
+    @Test
+    static void assertTest(){
+        assert 1 == 2 : "what a suprise !";
+    }
+
     public static void main(String[] args) {
-        OSExecute.command("java net.mindview.atunit.AtUnit chapter20_annotation/AtUnitExample1");
+//        assertTest();
+        OSExecute.command("java -version");
+//        OSExecute.command("java atunit.AtUnit chapter20_annotation/AtUnitExample1");
     }
 }
