@@ -44,7 +44,7 @@ public class E05_Callable implements Generator<Integer>, Callable {
     }
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        ExecutorService exec = Executors.newFixedThreadPool(2);
+        ExecutorService exec = Executors.newFixedThreadPool(5);
         int n = 5;
         List<Future<Integer>> results = new ArrayList<>();
         for (int i = 0; i < 10; i++) {

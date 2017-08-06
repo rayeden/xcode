@@ -18,6 +18,7 @@ public class SleepingTask extends LiftOff {
         try{
             while (countDown-- > 0){
                 System.out.println(status());
+                //同等于 Thread.sleep(200);
                 TimeUnit.MILLISECONDS.sleep(200);
             }
         } catch (InterruptedException e) {
