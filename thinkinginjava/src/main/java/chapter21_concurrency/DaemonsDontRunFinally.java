@@ -15,7 +15,7 @@ public class DaemonsDontRunFinally {
 
     public static void main(String[] args) {
         Thread t = new Thread(new ADaemon());
-        //不是后台线程可以打印内容
+        //
         t.setDaemon(true);
         t.start();
     }
