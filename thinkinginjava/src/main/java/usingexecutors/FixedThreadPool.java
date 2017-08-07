@@ -1,4 +1,4 @@
-package chapter21_concurrency.basicthreading;
+package usingexecutors;
 
 /**
  * Created by xhtc on 2017/8/5.
