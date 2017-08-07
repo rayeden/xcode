@@ -1,4 +1,4 @@
-package chapter21_concurrency;
+package chapter21_concurrency.features;
 
 import static net.mindview.util.Print.print;
 

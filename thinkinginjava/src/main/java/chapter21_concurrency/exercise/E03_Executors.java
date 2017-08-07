@@ -1,6 +1,6 @@
 package chapter21_concurrency.exercise;
 
-import chapter21_concurrency.LiftOff;
+import chapter21_concurrency.basicthreading.LiftOff;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

@@ -1,4 +1,4 @@
-package chapter21_concurrency;
+package chapter21_concurrency.features;
 
 import java.util.concurrent.TimeUnit;
 

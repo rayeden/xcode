@@ -1,4 +1,4 @@
-package chapter21_concurrency;
+package chapter21_concurrency.independent;
 
 /**
  * Created by xhtc on 2017/8/7.
