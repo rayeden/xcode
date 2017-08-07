@@ -1,5 +1,5 @@
 /**
- * Created by BG289522 on 2017/7/11.
+ * Created by xhtc on 2017/7/11.
  */
 public class StringTest {
 

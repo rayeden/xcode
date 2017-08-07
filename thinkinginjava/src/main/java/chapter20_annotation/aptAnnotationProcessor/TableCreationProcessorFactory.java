@@ -17,7 +17,7 @@ import java.util.Collections;
 import java.util.Set;
 
 /**
- * Created by BG289522 on 2017/8/4.
+ * Created by xhtc on 2017/8/4.
  */
 
 /**
@@ -65,7 +65,7 @@ public class TableCreationProcessorFactory implements AnnotationProcessorFactory
         public void process() {
             for (TypeDeclaration typeDecl : env.getSpecifiedTypeDeclarations()) {
                 typeDecl.accept(getDeclarationScanner(new TableCreationVisitor(), NO_OP));
-                sql = sql.substring(0, sql.length() -1) + ")";
+                sql = sql.substring(0, sql.length() - 1) + ")";
                 System.out.println("creation SQL is :\n + sql");
                 sql = "";
             }

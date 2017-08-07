@@ -3,7 +3,7 @@ import java.math.RoundingMode;
 import java.text.DecimalFormat;
 
 /**
- * Created by BG289522 on 2017/7/7.
+ * Created by xhtc on 2017/7/7.
  */
 public class BigDecimalTest {
 

@@ -3,7 +3,7 @@ package chapter20_annotation;
 import java.util.List;
 
 /**
- * Created by BG289522 on 2017/8/2.
+ * Created by xhtc on 2017/8/2.
  */
 public class PasswordUtils {
 

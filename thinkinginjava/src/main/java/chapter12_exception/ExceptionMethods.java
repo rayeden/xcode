@@ -1,7 +1,7 @@
 package chapter12_exception;
 
 /**
- * Created by BG289522 on 2017/6/23.
+ * Created by xhtc on 2017/6/23.
  */
 public class ExceptionMethods {
 

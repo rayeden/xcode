@@ -1,7 +1,7 @@
 package chapter6_enumAndanno;
 
 /**
- * Created by BG289522 on 2017/6/21.
+ * Created by xhtc on 2017/6/21.
  */
 public enum Planet {
 

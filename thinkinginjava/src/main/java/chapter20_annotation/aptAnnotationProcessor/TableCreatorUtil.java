@@ -6,7 +6,7 @@ import chapter20_annotation.aptAnnotationProcessor.database.SQLString;
 import com.sun.mirror.declaration.FieldDeclaration;
 
 /**
- * Created by BG289522 on 2017/8/4.
+ * Created by xhtc on 2017/8/4.
  */
 public class TableCreatorUtil {
 
