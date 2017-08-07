@@ -1,4 +1,4 @@
-package chapter21_concurrency;
+package chapter21_concurrency.catchexception;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
