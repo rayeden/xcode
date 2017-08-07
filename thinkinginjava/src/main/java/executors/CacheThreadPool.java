@@ -1,4 +1,4 @@
-package usingexecutors;
+package executors;
 
 import chapter21_concurrency.basicthreading.LiftOff;
 
@@ -10,12 +10,13 @@ import java.util.concurrent.Executors;
  */
 
 /**
- * 相当于限制数量为1的FixedThreadPool
+ * CachedThreadPool在程序执行的过程中通常会创建与所需数量相同的线程，
+ * 然后在她回收旧线程时停止创建新线程
  */
-public class SingleFixedThreadPool {
+public class CacheThreadPool {
 
     public static void main(String[] args) {
-        ExecutorService exec = Executors.newSingleThreadExecutor();
+        ExecutorService exec = Executors.newCachedThreadPool();
         for (int i = 0; i < 5; i++) {
             exec.execute(new LiftOff());
         }

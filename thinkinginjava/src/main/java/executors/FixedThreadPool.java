@@ -1,4 +1,4 @@
-package usingexecutors;
+package executors;
 
 /**
  * Created by xhtc on 2017/8/5.
