@@ -3,7 +3,7 @@ package chapter21_concurrency.exercise;
 import java.util.concurrent.*;
 
 /**
- * Created by BG289522 on 2017/8/7.
+ * Created by xhtc on 2017/8/7.
  */
 
 public class E10_ThreadMethod4Fibonacci {

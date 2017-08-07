@@ -1,7 +1,7 @@
 package chapter21_concurrency.exercise;
 
 /**
- * Created by BG289522 on 2017/8/7.
+ * Created by xhtc on 2017/8/7.
  */
 
 import java.util.ArrayList;
