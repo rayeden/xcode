@@ -6,7 +6,8 @@ package chapter21_concurrency;
 
 /**
  * 另一个任务可能会在构造器结束之前开始执行，这意味着该任务能够访问处于不稳定状态的对象
- */
+ * 应优选Executor创建线程
+ * */
 public class SelfManaged implements Runnable {
 
     private int countDown = 5;
