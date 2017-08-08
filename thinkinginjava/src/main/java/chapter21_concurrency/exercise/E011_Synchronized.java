@@ -1,6 +1,5 @@
 package chapter21_concurrency.exercise;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
