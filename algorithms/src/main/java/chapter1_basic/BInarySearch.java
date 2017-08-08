@@ -9,14 +9,19 @@ import java.util.Arrays;
 /**
  * Created by xhtc on 2017/8/8.
  */
+
+/**
+ * 在运行环境中配置文件参数，然后在控制台输入需要查找的数
+ */
 public class BInarySearch {
 
     public static int rank(int key, int[] a) {
         int low = 0;
         int high = a.length;
 
+        int mid;
         while (low <= high) {
-            int mid = low + (high - low) / 2;
+            mid = low + (high - low) / 2;
             if (a[mid] < key) {
                 low = mid + 1;
             } else if (a[mid] > key) {
@@ -33,9 +38,13 @@ public class BInarySearch {
         Arrays.sort(whitelist);
         while(!StdIn.isEmpty()){
             int key = StdIn.readInt();
-            if(rank(key, whitelist) == -1){
-                StdOut.println(key);
+            int index = rank(key, whitelist);
+            if(index == -1){
+                StdOut.println("key: " + key);
+            } else {
+                StdOut.println("index: " + index);
             }
+            break;
         }
     }
 
