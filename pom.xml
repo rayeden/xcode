@@ -19,6 +19,7 @@
         <module>xhtc</module>
         <module>redisinaction</module>
         <module>springinaction</module>
+        <module>algorithms</module>
     </modules>
 
     <properties>
