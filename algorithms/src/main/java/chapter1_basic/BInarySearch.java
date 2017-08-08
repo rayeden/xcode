@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 
 /**
- * 在运行环境中配置文件参数，然后在控制台输入需要查找的数
+ * 在运行环境中配置文件参数，然后在控制台输入需要查找的数g
  */
 public class BInarySearch {
 
