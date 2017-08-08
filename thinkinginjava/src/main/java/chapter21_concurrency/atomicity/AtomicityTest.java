@@ -12,7 +12,7 @@ import java.util.concurrent.Executors;
  */
 public class AtomicityTest implements Runnable {
 
-    private int i = 0;
+    private static int i = 0;
 
     public int getValue(){
         return i;
