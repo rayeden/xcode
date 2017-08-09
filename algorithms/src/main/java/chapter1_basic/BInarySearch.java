@@ -11,7 +11,7 @@ import java.util.Arrays;
  */
 
 /**
- * 在运行环境中配置文件参数，然后在控制台输入需要查找的数g
+ * 在运行环境中配置文件参数，然后在控制台输入需要查找的数
  */
 public class BInarySearch {
 
@@ -33,13 +33,31 @@ public class BInarySearch {
         return -1;
     }
 
+    //递归
+    public static int rank2(int key, int[] a) {
+        return recursion(a, 0, a.length - 1, key);
+    }
+
+    public static int recursion(int[] a, int low, int high, int key) {
+        if (low > high)
+            return -1;
+        int mid = low + (high - low) / 2;
+        if (a[mid] == key)
+            return mid;
+        else if (a[mid] < key) {
+            return recursion(a, mid + 1, high, key);
+        } else {
+            return recursion(a, low, mid - 1, key);
+        }
+    }
+
     public static void main(String[] args) {
         int[] whitelist = In.readInts(args[0]);
         Arrays.sort(whitelist);
-        while(!StdIn.isEmpty()){
+        while (!StdIn.isEmpty()) {
             int key = StdIn.readInt();
-            int index = rank(key, whitelist);
-            if(index == -1){
+            int index = rank2(key, whitelist);
+            if (index == -1) {
                 StdOut.println("key: " + key);
             } else {
                 StdOut.println("index: " + index);
