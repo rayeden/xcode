@@ -9,6 +9,10 @@ import java.util.concurrent.TimeUnit;
 /**
  * Created by xhtc on 2017/8/9.
  */
+
+/**
+ * 类似 OrnamentalGarden
+ */
 public class E17_Rays {
 
     public static void main(String[] args) throws InterruptedException {
@@ -87,7 +91,7 @@ class Counter {
 
     //有synchronized修饰误差较小，但并不准确
     public static synchronized void increment() {
-        count++;
+        ++count;
         Thread.yield();
     }
 

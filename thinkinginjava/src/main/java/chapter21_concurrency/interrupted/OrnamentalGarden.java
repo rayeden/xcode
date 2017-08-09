@@ -1,4 +1,4 @@
-package chapter21_concurrency.finality;
+package chapter21_concurrency.interrupted;
 
 import java.util.ArrayList;
 import java.util.List;
