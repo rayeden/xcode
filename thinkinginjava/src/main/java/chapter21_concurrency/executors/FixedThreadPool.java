@@ -1,4 +1,4 @@
-package executors;
+package chapter21_concurrency.executors;
 
 /**
  * Created by xhtc on 2017/8/5.

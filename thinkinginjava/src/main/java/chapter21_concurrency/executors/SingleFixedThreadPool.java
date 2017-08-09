@@ -1,4 +1,4 @@
-package executors;
+package chapter21_concurrency.executors;
 
 import chapter21_concurrency.basicthreading.LiftOff;
 
