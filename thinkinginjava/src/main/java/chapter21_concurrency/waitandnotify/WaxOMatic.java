@@ -12,6 +12,7 @@ import static net.mindview.util.Print.print;
 
 /**
  * 用wait()挂起并且释放锁，完成多线程之间的协作
+ * 方法中只有一个线程需要被唤醒，把notifyAll()换成notify()也一样可以工作
  * With Sequence
  */
 class Car {
