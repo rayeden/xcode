@@ -18,7 +18,6 @@ public class E22_BusyWait {
         TimeUnit.SECONDS.sleep(2);
         exec.shutdownNow();
     }
-
 }
 
 class Signal {
