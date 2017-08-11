@@ -10,6 +10,7 @@ import static net.mindview.util.Print.print;
 
 /**
  * 用BlockingQueue代替Piped
+ * 有时候会读到null？
  */
 
 class Sender2 implements Runnable {
@@ -30,7 +31,7 @@ class Sender2 implements Runnable {
                 }
             }
         } catch (InterruptedException e) {
-            print("Sender interrupted ");
+            print("Sender2 interrupted ");
         }
     }
 }
@@ -64,7 +65,7 @@ public class E30_BlockingQueuePipedIO {
         Receiver2 receiver2 = new Receiver2(sender2);
         exec.execute(sender2);
         exec.execute(receiver2);
-        TimeUnit.SECONDS.sleep(3);
+        TimeUnit.SECONDS.sleep(1);
         exec.shutdownNow();
     }
 
