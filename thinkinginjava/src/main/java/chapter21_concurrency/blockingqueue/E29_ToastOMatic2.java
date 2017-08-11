@@ -159,8 +159,6 @@ class MakingSandwich implements Runnable {
     private BlockingQueue<Sandwich> sandwichQueue;
     private static int count = 0;
 
-
-
     public MakingSandwich(BlockingQueue<Toast2> peanutButterQueue, BlockingQueue<Toast2> jelliedQueue) {
         this.peanutButterQueue = peanutButterQueue;
         this.jelliedQueue = jelliedQueue;
@@ -171,8 +169,9 @@ class MakingSandwich implements Runnable {
         try {
             while (!Thread.interrupted()) {
                 TimeUnit.MICROSECONDS.sleep(500);
-                Toast2 peanutButterToast = peanutButterQueue.take();
-                Toast2 jelliedToast = jelliedQueue.take();
+                Toast2 peanutButterToast = peanutButterQueue.poll();
+                Toast2 jelliedToast = jelliedQueue.poll();
+
                 Sandwich sandwich = new Sandwich(peanutButterToast, jelliedToast, count++);
                 peanutButterToast.used();
                 jelliedToast.used();
