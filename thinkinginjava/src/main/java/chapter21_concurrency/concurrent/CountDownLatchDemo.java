@@ -58,7 +58,7 @@ class WaitingTask implements Runnable {
 
     public void run() {
         try {
-            //latchCount为0时，唤醒线程（不是中断）
+            //等待所有latch的线程都完成再往下执行
             latch.await();
             print("Latch barrier passed for " + this);
         } catch (InterruptedException ex) {
