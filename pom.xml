@@ -20,6 +20,7 @@
         <module>redisinaction</module>
         <module>springinaction</module>
         <module>algorithms</module>
+        <module>clrs</module>
     </modules>
 
     <properties>
