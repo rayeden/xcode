@@ -92,7 +92,7 @@ class Count {
 public class E32_OrnamentalGarden3 {
 
     public static void main(String[] args) throws Exception {
-// All must share a single CountDownLatch object:
+        //如果设置CountDownLatch的Size为6，但是只起5个线程，就不能把latch减到0，不能唤醒main线程计算总和
         CountDownLatch latch = new CountDownLatch(5);
         ExecutorService exec = Executors.newCachedThreadPool();
         //每个线程共享一个latch
@@ -101,6 +101,7 @@ public class E32_OrnamentalGarden3 {
         TimeUnit.SECONDS.sleep(3);
         Entrance3.cancel();
         exec.shutdown();
+        //latch的线程全部结束后，main线程继续往下输出
         latch.await(); // Wait for results
         print("Total: " + Entrance3.getTotalCount());
         print("Sum of Entrances: " + Entrance3.sumEntrances());
