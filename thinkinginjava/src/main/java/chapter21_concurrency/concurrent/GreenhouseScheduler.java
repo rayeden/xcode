@@ -95,8 +95,7 @@ public class GreenhouseScheduler {
         public void run() {
             System.out.println("Terminating");
             scheduler.shutdownNow();
-            // Must start a separate task to do this job,
-            // since the scheduler has been shut down:
+            //此处必须新起一个线程，因为此时已发起中断scheduler的请求
             new Thread() {
                 public void run() {
                     for (DataPoint d : data)
