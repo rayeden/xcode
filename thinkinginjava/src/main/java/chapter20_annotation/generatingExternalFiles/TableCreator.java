@@ -21,11 +21,12 @@ import static chapter20_annotation.aptAnnotationProcessor.TableCreatorUtil.getCo
 public class TableCreator {
 
     public static void main(String[] args) throws ClassNotFoundException {
-        if (args.length < 1) {
-            System.out.println("arguments: annotated classes");
-            System.exit(0);
-        }
-        for (String className : args) {
+//        if (args.length < 1) {
+//            System.out.println("arguments: annotated classes");
+//            System.exit(0);
+//        }
+        String[] tables = new String[]{"chapter20_annotation.generatingExternalFiles.Member"};
+        for (String className : tables) {
             //反射得到类型信息
             Class<?> cl = Class.forName(className);
             //获取类上指定的注解
@@ -96,5 +97,4 @@ public class TableCreator {
 
         }
     }
-
 }
