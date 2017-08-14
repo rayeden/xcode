@@ -9,7 +9,7 @@ import java.util.Arrays;
 /**
  * 把n位二进制整数相加，存在一个长度为n + 1的数组里
  */
-public class E04_BinarySum {
+public class E1_4_BinarySum {
 
     public static int[] binarySum(int[] a, int[] b, int n) {
         int[] sum = new int[n + 1];
