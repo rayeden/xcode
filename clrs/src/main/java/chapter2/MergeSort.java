@@ -18,12 +18,12 @@ public class MergeSort {
         }
         left[n1] = Integer.MAX_VALUE;
         for (int j = 0; j < n2; j++) {
-            right[j] = array[q + j];
+            right[j] = array[q + j + 1];
         }
         right[n2] = Integer.MAX_VALUE;
         int i = 0, j = 0;
         //执行r-p+1次操作
-        for (int k = 0; k < r - p + 1; k++) {
+        for (int k = p; k <= r; k++) {
             if (left[i] <= right[j]) {
                 array[k] = left[i];
                 i++;
