@@ -1,4 +1,4 @@
-package chapter4_IoC;
+package chapter4_IoC.classloader_reflect;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -13,7 +13,7 @@ public class ReflectTest {
 
         //通过类加载器获取Car类的对象
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        Class clazz = loader.loadClass("chapter4_IoC.Car");
+        Class clazz = loader.loadClass("chapter4_IoC.classloader_reflect.Car");
 
         //通过类的默认构造器实例化Car
         Constructor cons = clazz.getDeclaredConstructor((Class[])null);

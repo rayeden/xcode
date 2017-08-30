@@ -1,4 +1,4 @@
-package chapter4_IoC;
+package chapter4_IoC.classloader_reflect;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -12,7 +12,7 @@ public class PrivateCarReflect {
     public static void main(String[] args) throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException, NoSuchMethodException, InvocationTargetException {
         //类加载器创建实例
         ClassLoader loader = Thread.currentThread().getContextClassLoader();
-        Class clazz = loader.loadClass("chapter4_IoC.PrivateCar");
+        Class clazz = loader.loadClass("chapter4_IoC.classloader_reflect.PrivateCar");
 
         PrivateCar car = (PrivateCar)clazz.newInstance();
         Field colorField = clazz.getDeclaredField("color");
