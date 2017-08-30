@@ -21,6 +21,7 @@
         <module>springinaction</module>
         <module>algorithms</module>
         <module>clrs</module>
+        <module>spring4X</module>
     </modules>
 
     <properties>
