@@ -22,6 +22,7 @@
         <module>algorithms</module>
         <module>clrs</module>
         <module>spring4X</module>
+        <module>refactoring</module>
     </modules>
 
     <properties>
